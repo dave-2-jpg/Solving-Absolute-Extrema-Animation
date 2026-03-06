@@ -243,17 +243,16 @@ class Demo(Scene):
         )
         self.wait(2)
 
-        # ... (previous code continues from eq12)
+
         
         self.wait(2)
         
-        # Box C(3) result
+
         box_c3 = SurroundingRectangle(eq12, color=BLUE_C, buff=0.3)
         self.play(Create(box_c3))
         self.wait(1)
         self.play(FadeOut(box_c3))
-        
-        # Step 4: Evaluate endpoints
+
         fourth_step = Text(
             "4. Evaluate End Behaviors",
             font_size=45,
@@ -269,14 +268,14 @@ class Demo(Scene):
         self.wait(2)
         self.play(FadeOut(fourth_step))
         
-        # Create fresh equation for evaluation
+
         equation_fresh = MathTex(
             r"C(t) = \frac{0.1t}{(t + 3)^2}",
             font_size=60
         )
         equation_fresh.move_to(ORIGIN)
         
-        # Evaluate C(1)
+    
         evaluate_1 = Text("Evaluate at t = 1:", font_size=32, color=ORANGE)
         evaluate_1.to_edge(UP)
         
@@ -284,7 +283,7 @@ class Demo(Scene):
         self.wait(1)
         self.play(FadeOut(evaluate_1))
         
-        # C(1) calculation steps
+  
         eq13 = MathTex(
             r"C(1) = \frac{0.1 \times 1}{(1 + 3)^2}",
             font_size=60
@@ -321,12 +320,11 @@ class Demo(Scene):
         self.play(ReplacementTransform(eq15, eq16))
         self.wait(1)
         
-        # Box C(1) result
         box_c1 = SurroundingRectangle(eq16, color=PURPLE, buff=0.3)
         self.play(Create(box_c1))
         self.wait(1)
         
-        # Move C(1) to top left corner
+
         self.play(
             FadeOut(box_c1),
             eq16.animate.to_edge(UP + LEFT),
@@ -334,7 +332,7 @@ class Demo(Scene):
         )
         self.wait(1)
         
-        # Evaluate C(6)
+
         equation_fresh2 = MathTex(
             r"C(t) = \frac{0.1t}{(t + 3)^2}",
             font_size=60
@@ -347,8 +345,7 @@ class Demo(Scene):
         self.play(Write(evaluate_6), Write(equation_fresh2))
         self.wait(1)
         self.play(FadeOut(evaluate_6))
-        
-        # C(6) calculation steps
+
         eq17 = MathTex(
             r"C(6) = \frac{0.1 \times 6}{(6 + 3)^2}",
             font_size=60
@@ -393,21 +390,19 @@ class Demo(Scene):
         
         self.play(ReplacementTransform(eq20, eq21))
         self.wait(1)
-        
-        # Box C(6) result
+
         box_c6 = SurroundingRectangle(eq21, color=PURPLE, buff=0.3)
         self.play(Create(box_c6))
         self.wait(1)
         
-        # Move C(6) to bottom left
+ 
         self.play(
             FadeOut(box_c6),
             eq21.animate.to_edge(DOWN + LEFT),
             run_time=1
         )
         self.wait(1)
-        
-        # Step 5: Compare all values
+
         fifth_step = Text(
             "5. Compare Values",
             font_size=45,
@@ -419,7 +414,7 @@ class Demo(Scene):
         self.wait(2)
         self.play(FadeOut(fifth_step))
         
-        # Bring all three values to center for comparison
+
         comparison_title = Text("Comparison:", font_size=32, color=GOLD)
         comparison_title.to_edge(UP)
         
@@ -457,12 +452,12 @@ class Demo(Scene):
         self.play(Write(comparison_group))
         self.wait(2)
         
-        # Highlight the maximum
+
         max_box = SurroundingRectangle(c3_result, color=PURPLE, buff=0.2)
         self.play(Create(max_box))
         self.wait(1)
         
-        # Final conclusion
+
         conclusion = Text(
             "Absolute Maximum at t = 3",
             font_size=48,
@@ -473,7 +468,7 @@ class Demo(Scene):
         self.play(Write(conclusion))
         self.wait(3)
         
-        # Final highlight
+     
         self.play(
             c3_result.animate.scale(1.3),
             conclusion.animate.scale(1.2),
